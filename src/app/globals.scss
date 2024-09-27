@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./animations";
+
+:root {
+  --background-clr: #feffff;
+  --primary-clr: #2c332c;
+  --primary-dark-clr: #1f241f;
+  --secondary-clr: #a3a3a3;
+  --accent-clr: #0b73da;
+
+  --transition-long: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  --transition-long-title: all 1.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  --transition-medium: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  --transition-fast: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-clr: #feffff;
+  }
+}
+
+* {
+  font-family: var(--font-nunito);
+}
+
+body {
+  color: var(--primary-clr);
+  background: var(--background-clr);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

@@ -1,0 +1,21 @@
+.underscore-anim {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.1rem;
+    height: 1.5px;
+    width: 100%;
+    background: var(--primary-clr);
+    transition: 200ms transform, 0ms transform-origin ease-in;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}

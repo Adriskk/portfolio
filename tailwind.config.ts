@@ -9,9 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "var(--background-clr)",
+        primary: {
+          DEFAULT: "var(--primary-clr)",
+          dark: "var(--primary-dark-clr)",
+        },
+        secondary: "var(--secondary-clr)",
+        accent: "var(--accent-clr)",
       },
+    },
+    fontFamily: {
+      sans: ["var(--font-nunito)"],
+      anton: ["var(--font-anton)"],
     },
   },
   plugins: [],
