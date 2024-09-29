@@ -29,9 +29,9 @@ const ProjectGallery = () => {
   });
 
   const y1 = useTransform(scrollYProgress, [0, 1], [0, height * 2]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [height * 0.3, 0]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 2.4]);
-  const y4 = useTransform(scrollYProgress, [0, 1], [height * 0.1, 0]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25]);
+  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3]);
 
   return (
     <div
@@ -39,22 +39,22 @@ const ProjectGallery = () => {
       className="pointer-events-none select-none h-[130vh] md:h-[150vh] lg:h-[180vh] bg-primary-dark flex box-border gap-[2vw] p-[2vw] overflow-hidden"
     >
       <ProjectGalleryColumn
-        cls="-top-[65%] w-full"
+        cls="-top-[65%] md:-top-[55%] lg:-top-[45%] w-full"
         images={[IMAGES[0], IMAGES[1], IMAGES[2]]}
         y={y1}
       />
       <ProjectGalleryColumn
-        cls="-top-[15%] hidden w-full lg:flex"
+        cls="-top-[95%] hidden w-full lg:flex"
         images={[IMAGES[3], IMAGES[9], IMAGES[5]]}
         y={y2}
       />
       <ProjectGalleryColumn
-        cls="-top-[105%] hidden w-full md:flex lg:-top-[50%]"
+        cls="-top-[45%] hidden w-full md:flex lg:-top-[50%]"
         images={[IMAGES[6], IMAGES[7], IMAGES[8]]}
         y={y3}
       />
       <ProjectGalleryColumn
-        cls="-top-[5%] w-full"
+        cls="-top-[110%] lg:-top-[75%] w-full"
         images={[IMAGES[4], IMAGES[3], IMAGES[6]]}
         y={y4}
       />

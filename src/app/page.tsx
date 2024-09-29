@@ -8,9 +8,13 @@ import Image from "next/image";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
 import Paragraph from "@/components/Character/Character";
-import { SOCIALS } from "@/config";
+import { CONTACT, SOCIALS } from "@/config";
 import ProjectGallery from "@/components/ProjectsGallery/ProjectsGallery";
 import Projects from "@/components/Projects/Projects";
+import { Marquees } from "@/components/Marquee/Marquee";
+import { MaskLetters } from "@/components/MaskText/MaskText";
+import Input from "@/components/Input/Input";
+import Button from "@/components/Button/Button";
 
 export default function Home() {
   useEffect(() => {
@@ -142,8 +146,8 @@ export default function Home() {
 
                 <motion.div variants={RevealUpVariants}>
                   <p className="text-2xl md:text-3xl text-balance">
-                    My love to website development started in 2020, and since
-                    then I admire beautiful design and animations on sites.
+                    My love to web development started in 2020, and since then I
+                    admire beautiful design and animations on sites.
                   </p>
                 </motion.div>
 
@@ -190,17 +194,20 @@ export default function Home() {
       <section id="work">
         <MaxWidthWrapper>
           <div className="mt-24">
-            <div className="relative w-full">
+            <div className="relative w-full flex flex-col">
               <span className="uppercase font-anton text-4xl md:text-5xl lg:text-6xl">
                 Highlighted work
               </span>
+              <small className="mt-4 max-w-[200px] leading-tight text-secondary">
+                I created fully by my own or took a big part in creating.
+              </small>
 
               <Image
                 priority
                 src={Circle}
                 alt="cicle"
                 className="pointer-events-none select-none absolute w-auto h-[96px] md:h-[124px] lg:h-[148px]
-                left-28 md:left-44 -top-5 md:-top-8 lg:left-64 lg:-top-12"
+                left-28 md:left-44 -top-5 md:-top-8 lg:left-64 lg:-top-12 transition-all duration-500"
               />
             </div>
 
@@ -209,21 +216,77 @@ export default function Home() {
         </MaxWidthWrapper>
       </section>
 
+      <section className="overflow-hidden">
+        <div className="py-96">
+          <Marquees />
+        </div>
+      </section>
+
       <section id="contact">
         <MaxWidthWrapper>
-          <div className="mt-16">
+          <div className="mt-16 pb-32">
             <div className="relative w-full">
-              <span className="uppercase font-anton text-7xl md:text-8xl lg:text-9xl">
-                Let's turn your idea into a website
-              </span>
-
-              <Image
-                priority
-                src={Circle}
-                alt="cicle"
-                className="pointer-events-none select-none absolute w-auto h-[96px] md:h-[124px] lg:h-[148px]
-                left-36 md:left-44 -top-5 md:-top-8 lg:left-64 lg:-top-6"
+              <MaskLetters
+                text="Drop a message"
+                className="uppercase font-anton text-6xl md:text-8xl lg:text-9xl"
               />
+
+              <motion.div
+                variants={{ initial: { opacity: 0 }, animate: { opacity: 1 } }}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                transition={{ delay: 0.7 }}
+              >
+                <Image
+                  priority
+                  src={Circle}
+                  alt="cicle"
+                  className="pointer-events-none select-none absolute w-auto h-[96px] md:h-[124px] lg:h-[148px]
+                -left-4 -top-5 md:-top-8 lg:-top-6 transition-all duration-500"
+                />
+              </motion.div>
+            </div>
+
+            <div className="flex flex-col gap-16 md:flex-row mt-24">
+              <div className="w-full">
+                <div className="w-full flex flex-col gap-10">
+                  <Input placeholder="Your name *" id="name" name="name" />
+                  <Input placeholder="Your e-mail *" id="mail" name="mail" />
+                  <Input
+                    placeholder="Tell me a little about your idea *"
+                    id="message"
+                    name="message"
+                    isTextarea
+                  />
+                </div>
+
+                <div className="mt-8 w-full max-w-[700px] flex justify-end">
+                  <Button text="Send it" />
+                </div>
+              </div>
+
+              <div className="w-full flex flex-col gap-10">
+                <div className="w-full flex flex-col gap-2">
+                  <span className="uppercase text-secondary">Phone</span>
+                  <a
+                    href={`tel:${CONTACT.phone}`}
+                    className="underscore-anim text-4xl font-anton w-fit after:h-2 md:text-5xl after:-bottom-[0.4rem]"
+                  >
+                    {CONTACT.phone}
+                  </a>
+                </div>
+
+                <div className="w-full flex flex-col gap-2">
+                  <span className="uppercase text-secondary">E-mail</span>
+                  <a
+                    href={`mailto:${CONTACT.mail}`}
+                    className="underscore-anim text-4xl font-anton w-fit after:h-2 md:text-5xl after:-bottom-[0.4rem]"
+                  >
+                    {CONTACT.mail}
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </MaxWidthWrapper>

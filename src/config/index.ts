@@ -2,18 +2,23 @@ import { Project } from "@/types/Project";
 
 export const SOCIALS = [
   {
-    label: "Instagram",
-    link: "https://www.instagram.com/adrian_iskra/",
-  },
-  {
     label: "WhatsApp",
-    link: "https://",
+    link: "https://wa.me/48782567216",
   },
   {
     label: "LinkedIn",
     link: "https://www.linkedin.com/in/adrian-iskra-9aa8a7220/",
   },
+  {
+    label: "Github",
+    link: "https://github.com/Adriskk/",
+  },
 ];
+
+export const CONTACT = {
+  phone: "+48 782 567 216",
+  mail: "adrian_iskra@o2.pl",
+};
 
 export const PROJECTS: Project[] = [
   {
@@ -25,7 +30,7 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "Osada Borowiec",
-    works: "Design & Development",
+    works: "Design, Development & Social media",
     src: "borowiec-project-mock.png",
     color: "#692E1C",
     link: "https://osadaborowiec.pl/",

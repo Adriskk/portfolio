@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Anton, Nunito } from "next/font/google";
 import "./globals.scss";
-import Navigation from "@/components/Navigation/Navigation";
+import PageContentManager from "@/components/PageContentManager/PageContentManager";
 
 const anton = Anton({
   subsets: ["latin"],
@@ -25,8 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${anton.variable} ${nunito.variable}`}>
         <main className="flex flex-col min-h-[100svh] w-full gap-16 md:gap-24 lg:gap-26">
-          <Navigation />
-          {children}
+          <PageContentManager>{children}</PageContentManager>
         </main>
       </body>
     </html>

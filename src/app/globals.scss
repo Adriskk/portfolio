@@ -10,11 +10,18 @@
   --primary-dark-clr: #1f241f;
   --secondary-clr: #a3a3a3;
   --accent-clr: #0b73da;
+  --selection-background-clr: #1f231faf;
+  --selection-color-clr: rgba(189, 211, 189, 0.81);
 
   --transition-long: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   --transition-long-title: all 1.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   --transition-medium: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
   --transition-fast: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+::selection {
+  background-color: var(--selection-background-clr);
+  color: var(--selection-color-clr);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,4 +43,12 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+img {
+  user-select: none;
+}
+
+.loading-text {
+  -webkit-text-stroke: 1px var(--primary-dark-clr);
 }

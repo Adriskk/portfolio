@@ -4,6 +4,7 @@ import { Project } from "@/types/Project";
 import { motion, Variants } from "framer-motion";
 import { SetStateAction } from "react";
 import { ModalType } from "@/components/Projects/Projects";
+import { ArrowUpRight } from "lucide-react";
 
 type ProjectItemProps = {
   project: Project;
@@ -25,7 +26,7 @@ const ProjectItem = ({ project, setModal, index }: ProjectItemProps) => {
   };
   const FLipTextVariants2: Variants = {
     initial: {
-      y: "100%",
+      y: "102%",
     },
     animate: {
       y: 0,
@@ -70,6 +71,18 @@ const ProjectItem = ({ project, setModal, index }: ProjectItemProps) => {
               {letter}
             </motion.span>
           ))}
+
+          <motion.span
+            variants={FLipTextVariants1}
+            transition={{
+              delay: project.title.split("").length * STAGGER,
+              duration: DURATION,
+              ease: [0.71, 0.06, 0.06, 0.93],
+            }}
+            className="inline-block invisible"
+          >
+            <ArrowUpRight className="w-10 h-10 lg:w-20 lg:h-20 xl:w-28 xl:h-28 stroke-[4] ml-4" />
+          </motion.span>
         </div>
 
         <div className="absolute left-0 bottom-0">
@@ -87,6 +100,17 @@ const ProjectItem = ({ project, setModal, index }: ProjectItemProps) => {
               {letter}
             </motion.span>
           ))}
+          <motion.span
+            variants={FLipTextVariants2}
+            transition={{
+              delay: project.title.split("").length * STAGGER,
+              duration: DURATION,
+              ease: [0.71, 0.06, 0.06, 0.93],
+            }}
+            className="inline-block"
+          >
+            <ArrowUpRight className="w-10 h-10 lg:w-20 lg:h-20 xl:w-28 xl:h-28 stroke-[4] ml-4" />
+          </motion.span>
         </div>
       </span>
 
