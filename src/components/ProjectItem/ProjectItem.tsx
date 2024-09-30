@@ -65,7 +65,7 @@ const ProjectItem = ({ project, setModal, index }: ProjectItemProps) => {
                 duration: DURATION,
                 ease: [0.71, 0.06, 0.06, 0.93],
               }}
-              className="font-anton text-5xl md:text-7xl lg:text-8xl xl:text-9xl uppercase inline-block"
+              className="font-anton text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl uppercase inline-block"
               key={index}
             >
               {letter}
@@ -94,7 +94,7 @@ const ProjectItem = ({ project, setModal, index }: ProjectItemProps) => {
                 duration: DURATION,
                 ease: [0.71, 0.06, 0.06, 0.93],
               }}
-              className="font-anton text-5xl md:text-7xl lg:text-8xl xl:text-9xl uppercase inline-block"
+              className="font-anton text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl uppercase inline-block"
               key={index}
             >
               {letter}

@@ -1,12 +1,15 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 type ButtonProps = {
   text: string;
+  type?: "button" | "submit";
+  isLoading?: boolean;
 };
 
-const Button = ({ text }: ButtonProps) => {
+const Button = ({ text, type, isLoading }: ButtonProps) => {
   const SpanVariants: Variants = {
     initial: {
       top: "0%",
@@ -36,12 +39,18 @@ const Button = ({ text }: ButtonProps) => {
 
   return (
     <motion.button
-      className="flex items-center justify-center py-5 px-10 bg-primary text-background rounded-full min-w-[140px]
-      overflow-hidden relative"
-      type="button"
+      className={cn(
+        "flex items-center justify-center py-5 px-10 bg-primary text-background rounded-full min-w-[140px] overflow-hidden relative",
+        {
+          "opacity-50": isLoading,
+        }
+      )}
+      type={type}
       initial="initial"
       whileHover="animate"
       whileFocus="animate"
+      animate={isLoading ? "animate" : "initial"}
+      disabled={isLoading}
     >
       <motion.span
         variants={SpanVariants}
@@ -55,7 +64,11 @@ const Button = ({ text }: ButtonProps) => {
         className="absolute left-1/2 -translate-x-1/2 rounded-full bg-accent flex items-center justify-center
         py-5 px-10 h-full"
       >
-        <span className="absolute uppercase">{text}</span>
+        {!isLoading ? (
+          <span className="absolute uppercase">{text}</span>
+        ) : (
+          <div className="loader" />
+        )}
       </motion.div>
     </motion.button>
   );

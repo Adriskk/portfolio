@@ -53,7 +53,7 @@ const ProjectModal = ({ modal, projects }: ProjectModalProps) => {
       variants={ModalVariants}
       initial="initial"
       animate={active ? "scaled" : "closed"}
-      className="h-[350px] w-[400px] flex items-center justify-center overflow-hidden fixed pointer-events-none"
+      className="hidden lg:flex h-[350px] w-[400px] items-center justify-center overflow-hidden fixed pointer-events-none"
     >
       <div
         className="w-full h-full absolute transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]"

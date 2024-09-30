@@ -13,8 +13,7 @@ import ProjectGallery from "@/components/ProjectsGallery/ProjectsGallery";
 import Projects from "@/components/Projects/Projects";
 import { Marquees } from "@/components/Marquee/Marquee";
 import { MaskLetters } from "@/components/MaskText/MaskText";
-import Input from "@/components/Input/Input";
-import Button from "@/components/Button/Button";
+import ContactForm from "@/components/ContactForm/ContactForm";
 
 export default function Home() {
   useEffect(() => {
@@ -91,7 +90,7 @@ export default function Home() {
 
           <div className="hero-text mt-32 md:mt-16 lg:mt-0">
             <div className="w-full flex flex-col-reverse lg:flex-row lg:items-end">
-              <span className="uppercase font-anton text-8xl md:text-9xl lg:text-[14vw] block">
+              <span className="uppercase font-anton text-7xl md:text-9xl lg:text-[14vw] block">
                 Frontend Developer
               </span>
 
@@ -99,7 +98,7 @@ export default function Home() {
                 Based in Kielce/Wrocław, Poland
               </small>
             </div>
-            <span className="uppercase font-anton text-8xl md:text-9xl lg:text-[14vw] block">
+            <span className="uppercase font-anton text-7xl md:text-9xl lg:text-[14vw] block">
               UI & UX Designer
             </span>
           </div>
@@ -228,7 +227,7 @@ export default function Home() {
             <div className="relative w-full">
               <MaskLetters
                 text="Drop a message"
-                className="uppercase font-anton text-6xl md:text-8xl lg:text-9xl"
+                className="uppercase font-anton text-5xl sm:text-6xl md:text-8xl lg:text-9xl"
               />
 
               <motion.div
@@ -248,23 +247,8 @@ export default function Home() {
               </motion.div>
             </div>
 
-            <div className="flex flex-col gap-16 md:flex-row mt-24">
-              <div className="w-full">
-                <div className="w-full flex flex-col gap-10">
-                  <Input placeholder="Your name *" id="name" name="name" />
-                  <Input placeholder="Your e-mail *" id="mail" name="mail" />
-                  <Input
-                    placeholder="Tell me a little about your idea *"
-                    id="message"
-                    name="message"
-                    isTextarea
-                  />
-                </div>
-
-                <div className="mt-8 w-full max-w-[700px] flex justify-end">
-                  <Button text="Send it" />
-                </div>
-              </div>
+            <div className="flex flex-col gap-16 md:flex-row mt-12 md:mt-24">
+              <ContactForm />
 
               <div className="w-full flex flex-col gap-10">
                 <div className="w-full flex flex-col gap-2">

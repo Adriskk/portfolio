@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="flex flex-col gap-10 md:flex-row md:justify-between">
           <div className="*:text-background flex flex-col items-center justify-center md:items-start">
             <span className="!text-secondary font-light md:text-sm">
-              2024 © Adrian Iskra
+              {new Date().getFullYear()} © Adrian Iskra
             </span>
 
             <span className="!text-secondary md:text-sm mt-1">
