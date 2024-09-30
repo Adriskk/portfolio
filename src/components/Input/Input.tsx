@@ -9,7 +9,7 @@ import { Variants, motion, AnimatePresence } from "framer-motion";
 type InputProps = {
   register: UseFormRegister<ContactFormValues>;
   placeholder: string;
-  name: string;
+  name: "name" | "mail" | "message";
   error?: FieldError;
   isTextarea?: boolean;
   required?: boolean;

@@ -1,7 +1,11 @@
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 import React, { useRef } from "react";
 
-export default function Paragraph({ paragraph }) {
+type ParagraphProps = {
+  paragraph: string;
+};
+
+export default function Paragraph({ paragraph }: ParagraphProps) {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -28,7 +32,13 @@ export default function Paragraph({ paragraph }) {
   );
 }
 
-const Word = ({ children, progress, range }) => {
+type WordProps = {
+  children: string;
+  progress: MotionValue<number>;
+  range: [number, number];
+};
+
+const Word = ({ children, progress, range }: WordProps) => {
   const amount = range[1] - range[0];
   const step = amount / children.length;
 
@@ -47,7 +57,9 @@ const Word = ({ children, progress, range }) => {
   );
 };
 
-const Char = ({ children, progress, range }) => {
+type CharProps = WordProps;
+
+const Char = ({ children, progress, range }: CharProps) => {
   const y = useTransform(progress, range, ["100%", "0%"]);
 
   return (

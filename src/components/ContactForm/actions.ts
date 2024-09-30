@@ -5,8 +5,8 @@ import { ContactFormValues } from "@/components/ContactForm/ContactForm";
 
 const accountSID = process.env.TWILIO_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
-const fromPhone = process.env.TWILIO_PHONE_FROM;
-const toPhone = process.env.TWILIO_PHONE_TO;
+const fromPhone: string = process.env.TWILIO_PHONE_FROM || "";
+const toPhone: string = process.env.TWILIO_PHONE_TO || "";
 const client = twilio(accountSID, authToken);
 
 export type SendMessageResponse = {

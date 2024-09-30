@@ -71,7 +71,7 @@ type ProjectGalleryColumnProps = {
 const ProjectGalleryColumn = ({
   images,
   cls = "",
-  y = 0,
+  y,
 }: ProjectGalleryColumnProps) => {
   return (
     <motion.div

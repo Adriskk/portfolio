@@ -14,7 +14,7 @@ export interface ContactFormValues {
   message: string;
 }
 
-const schema: yup.Schema<ContactFormValues> = yup.object({
+const schema = yup.object({
   name: yup.string().required("This field is required."),
   mail: yup
     .string()
