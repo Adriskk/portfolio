@@ -88,6 +88,7 @@ const ProjectGalleryColumn = ({
             alt="Project image"
             fill
             className="object-cover"
+            priority
           />
         </div>
       ))}

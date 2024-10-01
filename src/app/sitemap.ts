@@ -3,7 +3,7 @@ import { MetadataRoute } from "next";
 export default function Sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: process.env.BASE_URL + "/",
+      url: "https://adrian-iskra.dev/",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
