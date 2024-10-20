@@ -3,7 +3,7 @@ import { MetadataRoute } from "next";
 export default function Manifest(): MetadataRoute.Manifest {
   return {
     name: "Adrian Iskra - Front-end Developer, UI & UX Designer Portfolio",
-    short_name: "Adrian Iskra's Portfolio",
+    short_name: "Adrian's Portfolio",
     icons: [
       {
         src: "/favicons/android-chrome-192x192.png",
