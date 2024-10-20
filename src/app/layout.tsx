@@ -82,7 +82,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${anton.variable} ${nunito.variable}`}>
-        <main className="flex flex-col min-h-[100svh] w-full gap-16 md:gap-24 lg:gap-26">
+        <main className="flex flex-col min-h-[100svh] w-full gap-12">
           <PageContentManager>{children}</PageContentManager>
         </main>
       </body>
